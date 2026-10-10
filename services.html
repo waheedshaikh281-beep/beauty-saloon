@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services & Prices — Lumière Beauty Studio</title>
+    <meta name="description" content="The full Lumière menu: hair, skin, nails, makeup and brows, with prices and durations." />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="services">
+    <main>
+      <section class="page-hero">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="sparkles" data-count="12"></div>
+        <div class="container">
+          <div class="breadcrumb reveal"><a href="index.html">Home</a> / Services</div>
+          <h1 class="reveal" data-delay="100">The <em class="gradient-text">menu</em></h1>
+          <p class="reveal" data-delay="200">Every service includes a consultation, a welcome drink and a finishing touch. Prices are starting rates — your artist will confirm before we begin.</p>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top:2rem">
+        <div class="container">
+          <div class="toolbar reveal">
+            <div class="filters" id="filters" role="tablist" aria-label="Filter by category">
+              <span class="filter-pill" aria-hidden="true"></span>
+            </div>
+            <label class="search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input type="search" id="search" placeholder="Search treatments…" aria-label="Search treatments" />
+            </label>
+          </div>
+          <div class="service-grid" id="serviceGrid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section bg-dark">
+        <div class="sparkles" data-count="10"></div>
+        <div class="container">
+          <div class="section-head center reveal">
+            <span class="eyebrow">Packages</span>
+            <h2>Curated rituals, <em class="gradient-text">better value</em></h2>
+            <p>Bundle your favourites into a single visit and save up to 20%.</p>
+          </div>
+          <div class="packages">
+            <div class="package reveal" data-delay="0">
+              <h3>Fresh Start</h3>
+              <p style="opacity:.7;font-size:.9rem">A quick reset between big appointments.</p>
+              <div class="amount">$95</div>
+              <ul>
+                <li>Gloss & Tone Refresh</li>
+                <li>Gel Manicure</li>
+                <li>Complimentary scalp massage</li>
+              </ul>
+              <a href="booking.html?service=gloss" class="btn btn-light">Book package</a>
+            </div>
+            <div class="package featured reveal" data-delay="120">
+              <span class="ribbon">Most loved</span>
+              <h3>Lumière Day</h3>
+              <p style="opacity:.85;font-size:.9rem">Our signature head-to-toe experience.</p>
+              <div class="amount">$289</div>
+              <ul>
+                <li>Signature Cut & Style</li>
+                <li>Hydra Glow Facial</li>
+                <li>Rose Spa Pedicure</li>
+                <li>Prosecco & light lunch</li>
+              </ul>
+              <a href="booking.html?service=hydra-facial" class="btn btn-light">Book package</a>
+            </div>
+            <div class="package reveal" data-delay="240">
+              <h3>Bridal Glow</h3>
+              <p style="opacity:.7;font-size:.9rem">Everything for the big day, in one place.</p>
+              <div class="amount">$449</div>
+              <ul>
+                <li>Bridal Makeup with trial</li>
+                <li>Lash Lift & Tint</li>
+                <li>Gel Manicure</li>
+                <li>On-the-day touch-up kit</li>
+              </ul>
+              <a href="booking.html?service=bridal" class="btn btn-light">Book package</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="cta-band reveal zoom">
+            <div style="position:relative;z-index:1">
+              <h2>Not sure what to book?</h2>
+              <p>Choose “No preference” and our team will match you with the right artist.</p>
+            </div>
+            <a href="booking.html" class="btn btn-light" style="position:relative;z-index:1">Start booking</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/services.js"></script>
+  </body>
+</html>

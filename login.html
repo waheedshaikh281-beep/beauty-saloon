@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — Lumière Beauty Studio</title>
+    <meta name="description" content="Sign in to your Lumière account to book faster and manage your appointments." />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="login">
+    <main>
+      <section class="auth-section">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="sparkles" data-count="14"></div>
+
+        <div class="container auth-layout">
+          <div class="auth-visual reveal from-left">
+            <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=900&q=80&auto=format&fit=crop" alt="Makeup artist applying a soft glam look" />
+            <div class="auth-visual-copy">
+              <span class="eyebrow">Members’ lounge</span>
+              <h2>Your glow, <em>saved.</em></h2>
+              <ul class="perk-list">
+                <li><span>✦</span>Book again in two taps with your details remembered</li>
+                <li><span>✦</span>15% off your first visit, applied automatically</li>
+                <li><span>✦</span>Early access to seasonal treatments</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="auth-card reveal from-right" data-delay="120">
+            <div class="auth-tabs" role="tablist">
+              <button type="button" role="tab" class="active" data-tab="signin" aria-selected="true">Sign in</button>
+              <button type="button" role="tab" data-tab="signup" aria-selected="false">Create account</button>
+              <span class="auth-tab-pill" aria-hidden="true"></span>
+            </div>
+
+            <div class="auth-alert" id="authAlert" role="alert" hidden></div>
+
+            <form class="auth-form active" id="signinForm" data-form="signin" novalidate>
+              <h1>Welcome back</h1>
+              <p class="auth-sub">Sign in to manage your appointments.</p>
+              <div class="field">
+                <input id="siEmail" name="email" type="email" placeholder=" " autocomplete="email" required />
+                <label for="siEmail">Email address</label>
+                <div class="error">Enter a valid email address.</div>
+              </div>
+              <div class="field password-field">
+                <input id="siPassword" name="password" type="password" placeholder=" " autocomplete="current-password" required />
+                <label for="siPassword">Password</label>
+                <button type="button" class="toggle-password" aria-label="Show password">Show</button>
+                <div class="error">Please enter your password.</div>
+              </div>
+              <div class="auth-row">
+                <label class="checkbox"><input type="checkbox" id="remember" checked /><span></span>Remember me</label>
+                <button type="button" class="text-link" id="forgotBtn">Forgot password?</button>
+              </div>
+              <button type="submit" class="btn auth-submit">Sign in <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <div class="divider"><span>or</span></div>
+              <button type="button" class="btn btn-ghost auth-submit" id="demoBtn">Use demo account</button>
+              <p class="auth-switch">New to Lumière? <button type="button" class="text-link" data-switch="signup">Create an account</button></p>
+            </form>
+
+            <form class="auth-form" id="signupForm" data-form="signup" novalidate>
+              <h1>Join Lumière</h1>
+              <p class="auth-sub">It takes less than a minute.</p>
+              <div class="field">
+                <input id="suName" name="name" placeholder=" " autocomplete="name" required />
+                <label for="suName">Full name</label>
+                <div class="error">Please tell us your name.</div>
+              </div>
+              <div class="field">
+                <input id="suEmail" name="email" type="email" placeholder=" " autocomplete="email" required />
+                <label for="suEmail">Email address</label>
+                <div class="error">Enter a valid email address.</div>
+              </div>
+              <div class="field">
+                <input id="suPhone" name="phone" type="tel" placeholder=" " autocomplete="tel" />
+                <label for="suPhone">Phone number (optional)</label>
+                <div class="error">Enter a valid phone number.</div>
+              </div>
+              <div class="field password-field">
+                <input id="suPassword" name="password" type="password" placeholder=" " autocomplete="new-password" required />
+                <label for="suPassword">Password</label>
+                <button type="button" class="toggle-password" aria-label="Show password">Show</button>
+                <div class="error">Use at least 8 characters with a number.</div>
+              </div>
+              <div class="strength" aria-live="polite">
+                <div class="strength-bar"><span id="strengthFill"></span></div>
+                <small id="strengthLabel">Use 8+ characters with a number</small>
+              </div>
+              <div class="field password-field">
+                <input id="suConfirm" name="confirm" type="password" placeholder=" " autocomplete="new-password" required />
+                <label for="suConfirm">Confirm password</label>
+                <div class="error">Passwords don’t match.</div>
+              </div>
+              <label class="checkbox terms"><input type="checkbox" id="terms" /><span></span>I agree to the booking and cancellation policy</label>
+              <button type="submit" class="btn auth-submit">Create account <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <p class="auth-switch">Already have an account? <button type="button" class="text-link" data-switch="signin">Sign in</button></p>
+            </form>
+
+            <div class="auth-form auth-done" id="authDone">
+              <div class="success">
+                <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19 7"/></svg></div>
+                <h2 id="doneTitle">You’re signed in!</h2>
+                <p id="doneText" style="color:var(--muted)">Taking you back…</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/login.js"></script>
+  </body>
+</html>

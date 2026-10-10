@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book an Appointment — Lumière Beauty Studio</title>
+    <meta name="description" content="Book hair, skin, nail and makeup appointments at Lumière Beauty Studio online in four quick steps." />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="booking">
+    <main>
+      <section class="page-hero" style="padding-bottom:3rem">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="sparkles" data-count="10"></div>
+        <div class="container">
+          <div class="breadcrumb reveal"><a href="index.html">Home</a> / Booking</div>
+          <h1 class="reveal" data-delay="100">Reserve your <em class="gradient-text">moment</em></h1>
+          <p class="reveal" data-delay="200">Four quick steps. Free cancellation up to 24 hours before your appointment.</p>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top:0">
+        <div class="container booking-layout">
+          <div class="booking-panel reveal">
+            <ol class="stepper" id="stepper">
+              <li><div class="bar"></div><span class="label">1 · Services</span></li>
+              <li><div class="bar"></div><span class="label">2 · Artist</span></li>
+              <li><div class="bar"></div><span class="label">3 · Date & time</span></li>
+              <li><div class="bar"></div><span class="label">4 · Your details</span></li>
+            </ol>
+
+            <form id="bookingForm" novalidate>
+              <div class="step active" data-step="0">
+                <h2>Choose your services</h2>
+                <p>Select one or more treatments. You can combine them into a single visit.</p>
+                <div class="cat-tabs" id="catTabs"></div>
+                <div class="option-grid" id="serviceOptions"></div>
+              </div>
+
+              <div class="step" data-step="1">
+                <h2>Pick your artist</h2>
+                <p>Every Lumière artist is senior-trained. Choose a favourite or let us match you.</p>
+                <div class="option-grid" id="stylistOptions"></div>
+              </div>
+
+              <div class="step" data-step="2">
+                <h2>Select a date & time</h2>
+                <p>We’re open Monday to Saturday. Greyed-out times are already booked.</p>
+                <div class="calendar">
+                  <div class="cal-head">
+                    <button type="button" class="cal-nav" id="prevMonth" aria-label="Previous month">‹</button>
+                    <h3 id="calTitle"></h3>
+                    <button type="button" class="cal-nav" id="nextMonth" aria-label="Next month">›</button>
+                  </div>
+                  <div class="cal-grid" id="calGrid"></div>
+                </div>
+                <h4 class="slots-title" id="slotsTitle">Available times</h4>
+                <div id="slots"><p class="hint">Pick a date above to see open times.</p></div>
+              </div>
+
+              <div class="step" data-step="3">
+                <h2>Your details</h2>
+                <p>We’ll send a confirmation and a reminder the day before.</p>
+                <p class="account-note" id="accountNote"></p>
+                <div class="form-grid">
+                  <div class="field">
+                    <input id="name" name="name" placeholder=" " autocomplete="name" required />
+                    <label for="name">Full name</label>
+                    <div class="error">Please tell us your name.</div>
+                  </div>
+                  <div class="field">
+                    <input id="phone" name="phone" type="tel" placeholder=" " autocomplete="tel" required />
+                    <label for="phone">Phone number</label>
+                    <div class="error">Enter a valid phone number.</div>
+                  </div>
+                  <div class="field full">
+                    <input id="email" name="email" type="email" placeholder=" " autocomplete="email" required />
+                    <label for="email">Email address</label>
+                    <div class="error">Enter a valid email address.</div>
+                  </div>
+                  <div class="field full">
+                    <textarea id="notes" name="notes" placeholder=" "></textarea>
+                    <label for="notes">Anything we should know? (allergies, inspiration, access needs)</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" data-step="4">
+                <div class="success">
+                  <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19 7"/></svg></div>
+                  <h2>You’re booked!</h2>
+                  <div class="ref" id="bookingRef"></div>
+                  <p id="successText" style="color:var(--muted);max-width:440px;margin:0 auto 2rem"></p>
+                  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+                    <button type="button" class="btn" id="newBooking">Book another</button>
+                    <a href="index.html" class="btn btn-ghost">Back to home</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-actions" id="stepActions">
+                <button type="button" class="btn btn-ghost" id="backBtn">Back</button>
+                <button type="button" class="btn" id="nextBtn">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              </div>
+            </form>
+
+            <div class="upcoming" id="upcoming"></div>
+          </div>
+
+          <aside class="summary reveal from-right" data-delay="150" aria-live="polite">
+            <h3>Your appointment</h3>
+            <dl>
+              <div><dt>Services</dt><dd id="sumServices" class="placeholder">Nothing selected yet</dd></div>
+              <div><dt>Artist</dt><dd id="sumStylist" class="placeholder">Not chosen</dd></div>
+              <div><dt>When</dt><dd id="sumWhen" class="placeholder">Not chosen</dd></div>
+              <div><dt>Duration</dt><dd id="sumDuration" class="placeholder">—</dd></div>
+            </dl>
+            <div class="total"><span>Estimated total</span><strong id="sumTotal">$0</strong></div>
+            <p class="note">Pay in studio after your appointment. New clients receive 15% off, applied at checkout.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/booking.js"></script>
+  </body>
+</html>
